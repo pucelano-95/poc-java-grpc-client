@@ -56,6 +56,7 @@ public class PocJavaGrpcClientApplication {
                 for (int j = 0; j < sizes.length; j++) {
                     log.info("REST time in {} ms for {} bytes", restTimes.get(j), restSerializedDataLength.get(j));
                     log.info("GRPC time in {} ms for {} bytes", grpcTimes.get(j), grpcSerializedDataLength.get(j));
+                    log.info("GRPC is faster {} times than REST", (float)(restTimes.get(j)/grpcTimes.get(j)));
                 }
             }
         } catch (Exception exception) {
